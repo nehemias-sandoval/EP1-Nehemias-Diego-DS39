@@ -18,7 +18,7 @@ namespace EP1_nehemias_diego_ds39.Models
             {
                 var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-                if (userManager.FindByEmailAsync("admin@example.com").Result == null)
+                if (userManager.FindByEmailAsync("user@example.com").Result == null)
                 {
                     var user = new IdentityUser
                     {
