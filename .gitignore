@@ -1,0 +1,16 @@
+bin
+obj
+node_modules
+
+# Archivos
+.user
+.suo
+.cache
+.log
+.sqlite
+.sqlite3
+.db
+.db-shm
+.db-wal
+.vscode
+.vs

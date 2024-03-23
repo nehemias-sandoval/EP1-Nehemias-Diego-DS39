@@ -1,0 +1,72 @@
+﻿@page
+@model EP1_Nehemias_Diego_DS39.Pages.Products.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductVM.ProductName" class="control-label"></label>
+                <input asp-for="ProductVM.ProductName" class="form-control" />
+                <span asp-validation-for="ProductVM.ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.CategoryId" class="control-label"></label>
+                <select asp-for="ProductVM.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.SupplierId" class="control-label"></label>
+                <select asp-for="ProductVM.SupplierId" class="form-control" asp-items="ViewBag.SupplierId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.QuantityPerUnit" class="control-label"></label>
+                <input asp-for="ProductVM.QuantityPerUnit" class="form-control" />
+                <span asp-validation-for="ProductVM.QuantityPerUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.UnitPrice" class="control-label"></label>
+                <input asp-for="ProductVM.UnitPrice" class="form-control" />
+                <span asp-validation-for="ProductVM.UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.UnitsInStock" class="control-label"></label>
+                <input asp-for="ProductVM.UnitsInStock" class="form-control" />
+                <span asp-validation-for="ProductVM.UnitsInStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.UnitsOnOrder" class="control-label"></label>
+                <input asp-for="ProductVM.UnitsOnOrder" class="form-control" />
+                <span asp-validation-for="ProductVM.UnitsOnOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductVM.ReorderLevel" class="control-label"></label>
+                <input asp-for="ProductVM.ReorderLevel" class="form-control" />
+                <span asp-validation-for="ProductVM.ReorderLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ProductVM.Discontinued" /> @Html.DisplayNameFor(model => model.ProductVM.Discontinued)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
